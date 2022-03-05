@@ -281,6 +281,7 @@ function start_crossyroad () {
     scene.cameraFollowSprite(crosser)
     tiles.placeOnRandomTile(crosser, assets.tile`myTile3`)
     start_cars()
+    start_cars()
 }
 let road_identifier: Image = null
 let car_position: tiles.Location = null
