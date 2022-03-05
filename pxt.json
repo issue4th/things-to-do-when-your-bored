@@ -1,5 +1,6 @@
 {
     "name": "things to do when your bored",
+    "version": "0.0.1",
     "description": "",
     "dependencies": {
         "device": "*",
