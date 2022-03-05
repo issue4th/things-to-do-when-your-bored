@@ -66,7 +66,7 @@ function add_a_car (start_location: Image) {
         . . . . f 6 d 6 6 6 6 d 6 f . . 
         . . . . . 8 6 6 6 6 6 6 8 . . . 
         `, SpriteKind.car)
-    car.vy = 200
+    car.vy = 100
     tiles.placeOnRandomTile(car, start_location)
 }
 scene.onOverlapTile(SpriteKind.bored, assets.tile`myTile7`, function (sprite, location) {
@@ -79,7 +79,9 @@ scene.onOverlapTile(SpriteKind.bored, assets.tile`myTile7`, function (sprite, lo
 })
 scene.onHitWall(SpriteKind.car, function (sprite, location) {
     sprite.destroy()
-    add_a_car(assets.tile`myTile1`)
+    car_position = tiles.locationOfSprite(sprite)
+    road_identifier = tiles.tileImageAtLocation(tiles.getTileLocation(location.column, 0))
+    add_a_car(road_identifier)
 })
 scene.onOverlapTile(SpriteKind.bored, assets.tile`myTile5`, function (sprite, location) {
     if (controller.B.isPressed()) {
@@ -140,8 +142,12 @@ function start_crossyroad () {
     tiles.placeOnRandomTile(crosser, assets.tile`myTile3`)
     add_a_car(assets.tile`myTile6`)
     add_a_car(assets.tile`myTile1`)
+    add_a_car(assets.tile`myTile9`)
+    add_a_car(assets.tile`myTile11`)
 }
 let crosser: Sprite = null
+let road_identifier: Image = null
+let car_position: tiles.Location = null
 let car: Sprite = null
 let spider_GD: Sprite = null
 let rolling_ball: Sprite = null
