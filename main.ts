@@ -148,7 +148,16 @@ function start_cars () {
     add_a_car(assets.tile`myTile13`)
     add_a_car(assets.tile`myTile14`)
     add_a_car(assets.tile`myTile17`)
+    add_a_car(assets.tile`myTile20`)
 }
+scene.onOverlapTile(SpriteKind.bored, assets.tile`myTile2`, function (sprite, location) {
+    if (controller.B.isPressed()) {
+        music.sonar.play()
+    }
+    if (controller.A.isPressed()) {
+        mySprite.sayText("music (sonar)", 1000, false)
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileDarkGrass1, function (sprite, location) {
     tiles.placeOnRandomTile(crosser, assets.tile`myTile3`)
 })
@@ -185,11 +194,13 @@ scene.onOverlapTile(SpriteKind.bored, assets.tile`myTile0`, function (sprite, lo
         mySprite.sayText("pool run", 1000, false)
     }
 })
-function add_a_car (start_location: Image) {
-    get_random_car_image()
-    car = sprites.create(car_image, SpriteKind.car)
-    car.vy = randint(50, 150)
-    tiles.placeOnRandomTile(car, start_location)
+function add_a_car (start_colour: Image) {
+    if (tiles.getTilesByType(start_colour).length > 0) {
+        get_random_car_image()
+        car = sprites.create(car_image, SpriteKind.car)
+        car.vy = randint(50, 150)
+        tiles.placeOnRandomTile(car, start_colour)
+    }
 }
 scene.onOverlapTile(SpriteKind.bored, assets.tile`myTile7`, function (sprite, location) {
     if (controller.B.isPressed()) {
@@ -225,6 +236,9 @@ scene.onOverlapTile(SpriteKind.bored, assets.tile`myTile5`, function (sprite, lo
     if (controller.A.isPressed()) {
         mySprite.sayText("geometry dash spider", 1000, false)
     }
+})
+scene.onOverlapTile(SpriteKind.car, assets.tile`myTile18`, function (sprite, location) {
+    sprite.startEffect(effects.ashes, 200)
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     if (spider_GD) {
