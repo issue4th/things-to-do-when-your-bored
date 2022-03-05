@@ -14,6 +14,144 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile6`, function (sprite, l
     tiles.placeOnRandomTile(spider_GD, assets.tile`myTile3`)
     spider_GD.vx = 125
 })
+function get_random_car_image () {
+    car_selector = randint(1, 5)
+    if (car_selector == 1) {
+        car_image = img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . 6 6 6 6 6 6 . . . . 
+            . . . . . 6 6 9 9 6 6 6 6 . . . 
+            . . . . . c 9 6 6 6 6 6 c . . . 
+            . . . . 6 c 9 6 6 6 6 6 c 6 . . 
+            . . . 8 6 c 9 6 6 6 6 6 c 6 8 . 
+            . . . f 6 c 9 6 6 6 6 6 c 6 f . 
+            . . . f 8 c 6 6 6 6 6 6 c 8 f . 
+            . . . f 6 c 6 b b b b 6 c 6 f . 
+            . . . 8 6 6 b c c c c b 6 6 8 . 
+            . . . 8 8 b c c c c c c b 8 8 . 
+            . . . f 8 9 9 9 9 9 9 9 9 8 f . 
+            . . . f 8 d 6 6 6 6 6 6 d 8 f . 
+            . . . . 6 d d 6 6 6 6 d d 6 f . 
+            . . . . f 6 d 6 6 6 6 d 6 f . . 
+            . . . . . 8 6 6 6 6 6 6 8 . . . 
+            `
+    } else if (car_selector == 2) {
+        car_image = img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . 2 2 2 2 2 2 . . . . 
+            . . . . . 2 2 4 4 2 2 2 2 . . . 
+            . . . . . c 4 2 2 2 2 2 c . . . 
+            . . . . 2 c 4 2 2 2 2 2 c 2 . . 
+            . . . e 2 c 4 2 2 2 2 2 c 2 e . 
+            . . . f 2 c 4 2 2 2 2 2 c 2 f . 
+            . . . f e c 2 2 2 2 2 2 c e f . 
+            . . . f 2 c 2 b b b b 2 c 2 f . 
+            . . . e 2 2 b c c c c b 2 2 e . 
+            . . . e e b c c c c c c b e e . 
+            . . . f e 4 4 4 4 4 4 4 4 e f . 
+            . . . f e d 2 2 2 2 2 2 d e f . 
+            . . . . 2 d d 2 2 2 2 d d 2 f . 
+            . . . . f 2 d 2 2 2 2 d 2 f . . 
+            . . . . . e 2 2 2 2 2 2 e . . . 
+            `
+    } else if (car_selector == 3) {
+        car_image = img`
+            .cccccccccccccc.
+            c66666666666666c
+            c66777777777766c
+            c77777777777771c
+            c76666666666661c
+            c66666666666666c
+            c66777777777766c
+            c77777777777771c
+            c76666666666661c
+            c66666666666666c
+            c66777777777766c
+            c77777777777771c
+            c76666666666661c
+            c66666666666666c
+            c66777777777766c
+            c77777777777771c
+            c76666666666661c
+            c66666666666666c
+            c66777777777766c
+            c77777777777771c
+            c76666666666661c
+            c66666666666666c
+            c66777777777766c
+            c77777777777771c
+            c76666666666661c
+            c66666666666666c
+            c64699999999946c
+            c6c9699969999c6c
+            f6c9969996999c6f
+            f6c9996999699c6f
+            f6cccccccccccc6f
+            f66666666666666f
+            f64444444444446f
+            f6c222c66c222c6f
+            f6c222cddc222c6f
+            f6c2222cc2222c6f
+            f6cccccccccccc6f
+            f66666666666666f
+            f6ffffffffffff6f
+            ffffffffffffffff
+            `
+    } else if (car_selector == 4) {
+        car_image = img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . 1 1 1 1 1 1 . . . . 
+            . . . . . 1 1 9 9 1 1 1 1 . . . 
+            . . . . . c 9 1 1 1 1 1 c . . . 
+            . . . . 1 c 9 1 1 1 1 1 c 1 . . 
+            . . . a 1 c 9 1 1 1 1 1 c 1 a . 
+            . . . f 1 c 9 1 1 1 1 1 c 1 f . 
+            . . . f a c 1 1 1 1 1 1 c a f . 
+            . . . f 1 c 1 b b b b 1 c 1 f . 
+            . . . a 1 1 b c c c c b 1 1 a . 
+            . . . a a b c c c c c c b a a . 
+            . . . f a 9 9 9 9 9 9 9 9 a f . 
+            . . . f a d 1 1 1 1 1 1 d a f . 
+            . . . . 1 d d 1 1 1 1 d d 1 f . 
+            . . . . f 1 d 1 1 1 1 d 1 f . . 
+            . . . . . a 1 1 1 1 1 1 a . . . 
+            `
+    } else {
+        car_image = img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . 7 7 7 7 7 7 . . . . 
+            . . . . . 7 7 9 9 7 7 7 7 . . . 
+            . . . . . c 9 7 7 7 7 7 c . . . 
+            . . . . 7 c 9 7 7 7 7 7 c 7 . . 
+            . . . 8 7 c 9 7 7 7 7 7 c 7 8 . 
+            . . . f 7 c 9 7 7 7 7 7 c 7 f . 
+            . . . f 8 c 7 7 7 7 7 7 c 8 f . 
+            . . . f 7 c 7 b b b b 7 c 7 f . 
+            . . . 8 7 7 b c c c c b 7 7 8 . 
+            . . . 8 8 b c c c c c c b 8 8 . 
+            . . . f 8 9 9 9 9 9 9 9 9 8 f . 
+            . . . f 8 d 7 7 7 7 7 7 d 8 f . 
+            . . . . 7 d d 7 7 7 7 d d 7 f . 
+            . . . . f 7 d 7 7 7 7 d 7 f . . 
+            . . . . . 8 7 7 7 7 7 7 8 . . . 
+            `
+    }
+}
+function start_cars () {
+    add_a_car(assets.tile`myTile6`)
+    add_a_car(assets.tile`myTile1`)
+    add_a_car(assets.tile`myTile9`)
+    add_a_car(assets.tile`myTile11`)
+    add_a_car(assets.tile`myTile16`)
+    add_a_car(assets.tile`myTile15`)
+    add_a_car(assets.tile`myTile12`)
+    add_a_car(assets.tile`myTile13`)
+    add_a_car(assets.tile`myTile14`)
+    add_a_car(assets.tile`myTile17`)
+}
+scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileDarkGrass1, function (sprite, location) {
+    tiles.placeOnRandomTile(crosser, assets.tile`myTile3`)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) {
     game.over(true, effects.confetti)
 })
@@ -48,25 +186,9 @@ scene.onOverlapTile(SpriteKind.bored, assets.tile`myTile0`, function (sprite, lo
     }
 })
 function add_a_car (start_location: Image) {
-    car = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . 6 6 6 6 6 6 . . . . 
-        . . . . . 6 6 9 9 6 6 6 6 . . . 
-        . . . . . c 9 6 6 6 6 6 c . . . 
-        . . . . 6 c 9 6 6 6 6 6 c 6 . . 
-        . . . 8 6 c 9 6 6 6 6 6 c 6 8 . 
-        . . . f 6 c 9 6 6 6 6 6 c 6 f . 
-        . . . f 8 c 6 6 6 6 6 6 c 8 f . 
-        . . . f 6 c 6 b b b b 6 c 6 f . 
-        . . . 8 6 6 b c c c c b 6 6 8 . 
-        . . . 8 8 b c c c c c c b 8 8 . 
-        . . . f 8 9 9 9 9 9 9 9 9 8 f . 
-        . . . f 8 d 6 6 6 6 6 6 d 8 f . 
-        . . . . 6 d d 6 6 6 6 d d 6 f . 
-        . . . . f 6 d 6 6 6 6 d 6 f . . 
-        . . . . . 8 6 6 6 6 6 6 8 . . . 
-        `, SpriteKind.car)
-    car.vy = 100
+    get_random_car_image()
+    car = sprites.create(car_image, SpriteKind.car)
+    car.vy = randint(50, 150)
     tiles.placeOnRandomTile(car, start_location)
 }
 scene.onOverlapTile(SpriteKind.bored, assets.tile`myTile7`, function (sprite, location) {
@@ -109,6 +231,9 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         spider_GD.vy = 1000
     }
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.car, function (sprite, otherSprite) {
+    tiles.placeOnRandomTile(crosser, assets.tile`myTile3`)
+})
 scene.onOverlapTile(SpriteKind.bored, assets.tile`myTile`, function (sprite, location) {
     if (controller.B.isPressed()) {
         mySprite.sayText(randint(0, 1000))
@@ -138,17 +263,17 @@ function start_crossyroad () {
         . . f 5 5 5 5 5 f f f . . . . . 
         . . f f f f f f . . . . . . . . 
         `, SpriteKind.Player)
+    controller.moveSprite(crosser)
     scene.cameraFollowSprite(crosser)
     tiles.placeOnRandomTile(crosser, assets.tile`myTile3`)
-    add_a_car(assets.tile`myTile6`)
-    add_a_car(assets.tile`myTile1`)
-    add_a_car(assets.tile`myTile9`)
-    add_a_car(assets.tile`myTile11`)
+    start_cars()
 }
-let crosser: Sprite = null
 let road_identifier: Image = null
 let car_position: tiles.Location = null
 let car: Sprite = null
+let crosser: Sprite = null
+let car_image: Image = null
+let car_selector = 0
 let spider_GD: Sprite = null
 let rolling_ball: Sprite = null
 let mySprite: Sprite = null
@@ -287,15 +412,6 @@ scene.setBackgroundImage(img`
     `)
 tiles.loadMap(tiles.createMap(tilemap`level1`))
 scene.cameraFollowSprite(mySprite)
-game.onUpdate(function () {
-    if (crosser) {
-        if (controller.anyButton.isPressed()) {
-            crosser.vx = 50
-        } else {
-            crosser.vx = 0
-        }
-    }
-})
 game.onUpdateInterval(500, function () {
     if (spider_GD) {
         spider_GD.vx = 125
